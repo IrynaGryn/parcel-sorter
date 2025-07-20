@@ -9,7 +9,7 @@ Automated parcel sorting system for internal handling at a parcel distribution c
 
 - ✅ **Department Chain Handling**  
   Business logic based on parcel weight and value.  
-  The system uses the **Chain of Responsibility pattern** — adding or removing departments requires only changing the chain in `ParcelHandler.ts`.
+  The system uses the **Chain of Responsibility pattern** - adding or removing departments requires only changing the chain in `ParcelHandler.ts`.
 
 - ✅ **Search & Filter**  
   - Global search by recipient name or city  
@@ -51,7 +51,7 @@ Automated parcel sorting system for internal handling at a parcel distribution c
 
 ## Test Coverage Summary:
 
-# Unit tests for:
+### Unit tests for:
 
 - Parcel processing logic (chain of departments)
 
