@@ -1,5 +1,3 @@
-// MailDepartment.ts - Handles parcels weighing up to 1kg.
-
 import { Department } from './BaseDepartment'
 import type { Parcel } from '../../models/Parcel'
 

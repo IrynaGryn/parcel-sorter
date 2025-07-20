@@ -1,5 +1,3 @@
-// ParcelHandler.ts - Initializes the department chain and processes parcels.
-
 import type { Parcel } from '../models/Parcel'
 import { Department } from './departments/BaseDepartment'
 import { InsuranceDepartment } from './departments/InsuranceDepartment'

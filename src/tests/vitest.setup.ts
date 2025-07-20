@@ -1,4 +1,3 @@
-// vitest.setup.ts
 import { beforeEach } from 'vitest'
 import { config } from '@vue/test-utils'
 import PrimeVue from 'primevue/config'

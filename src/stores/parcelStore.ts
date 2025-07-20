@@ -1,5 +1,3 @@
-// parcelStore.ts - Manages parcels and logs in a centralized store using Pinia.
-
 import { defineStore } from 'pinia'
 import type { Parcel } from '../models/Parcel'
 
@@ -18,6 +16,7 @@ export const useParcelStore = defineStore('parcelStore', {
     setLogs(logs: string[]) {
       this.logs = logs
     },
+    // Saves original XML into the store.
     setOriginalXml(xml: string) {
       this.originalXml = xml
     },

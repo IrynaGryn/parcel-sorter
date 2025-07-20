@@ -1,5 +1,3 @@
-// InsuranceDepartment.ts - Signs off parcels over €1000
-
 import { Department } from './BaseDepartment'
 import type { Parcel } from '../../models/Parcel'
 

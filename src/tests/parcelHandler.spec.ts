@@ -1,5 +1,3 @@
-// parcelHandler.spec.ts - Unit test for ParcelHandler
-
 import { describe, it, expect } from 'vitest'
 import { ParcelHandler } from '../logic/ParcelHandler'
 import type { Parcel } from '../models/Parcel'

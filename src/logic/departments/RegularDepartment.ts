@@ -1,5 +1,3 @@
-// RegularDepartment.ts - Handles parcels weighing over 1kg up to 10kg.
-
 import { Department } from './BaseDepartment'
 import type { Parcel } from '../../models/Parcel'
 
