@@ -15,6 +15,7 @@
     </div>
 
     <ParcelTable
+      :key="tableKey"
       :parcels="parcelStore.parcels"
       @delete="onDeleteParcel"
       :loading="loading"
@@ -46,6 +47,7 @@ const parcelStore = useParcelStore()
 const confirm = useConfirm()
 const toast = useToast()
 const loading = ref(false)
+const tableKey = ref(0)
 
 // Handles XML file upload and parsing
 const onFileSelect = (event: any) => {
@@ -61,6 +63,7 @@ const onFileSelect = (event: any) => {
     parcelStore.setParcels(parcels)
     parcelStore.setLogs(logs)
     parcelStore.setOriginalXml(xmlString)
+    tableKey.value++
 
     loading.value = false
     toast.add({ severity: 'success', summary: 'Success', detail: 'Parcels processed!', life: 3000 })
@@ -90,6 +93,7 @@ const onReset = () => {
     icon: 'pi pi-info-circle',
     accept: () => {
       parcelStore.clear()
+      tableKey.value++
       toast.add({ severity: 'info', summary: 'Reset', detail: 'All data cleared', life: 3000 })
     }
   })

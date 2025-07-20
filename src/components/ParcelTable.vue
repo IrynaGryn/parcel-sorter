@@ -95,4 +95,11 @@
   <script lang="ts">
   export default {}
   </script>
+
+  <style scoped>
+  .p-datatable {
+    height: 460px;
+  }
+
+  </style>
   
