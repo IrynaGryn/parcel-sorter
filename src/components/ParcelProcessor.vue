@@ -80,6 +80,7 @@ const onDeleteParcel = (parcel: any) => {
     accept: () => {
       parcelStore.parcels = parcelStore.parcels.filter((p: any) => p !== parcel)
       parcelStore.logs = parcelStore.logs.filter((log: string) => !log.includes(parcel.recipient.name))
+      parcelStore.logs.push(`[Delete] Parcel for ${parcel.recipient.name} has been deleted`)
       toast.add({ severity: 'warn', summary: 'Deleted', detail: 'Parcel deleted', life: 3000 })
     }
   })
@@ -94,6 +95,7 @@ const onReset = () => {
     accept: () => {
       parcelStore.clear()
       tableKey.value++
+      parcelStore.logs.push(`[Reset] All parcels and logs have been cleared`)
       toast.add({ severity: 'info', summary: 'Reset', detail: 'All data cleared', life: 3000 })
     }
   })
@@ -111,6 +113,7 @@ const onReprocess = () => {
   const logs = handler.process(parcels)
   parcelStore.setParcels(parcels)
   parcelStore.setLogs(logs)
+  parcelStore.logs.push(`[Reprocess] Parcels reprocessed at ${new Date().toLocaleTimeString()}`)
   toast.add({ severity: 'success', summary: 'Reprocessed', detail: 'Parcels reprocessed', life: 3000 })
 }
 </script>

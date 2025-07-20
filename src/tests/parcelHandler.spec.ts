@@ -21,8 +21,7 @@ describe('ParcelHandler', () => {
     const handler = new ParcelHandler()
     const logs = handler.process([parcel])
 
-    expect(logs).toContain('[Insurance] Handling parcel to Test User')
-    expect(logs).toContain('[Mail] Handling parcel to Test User')
+    expect(logs).toContain('[Processing] Parcel for Test User requires insurance.')
     expect(parcel.department).toBe('Insurance & Mail')
   })
 })

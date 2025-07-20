@@ -12,7 +12,19 @@ describe('ParcelActions.vue', () => {
     })
 
     const store = useParcelStore()
-    store.parcels = [{}] // ✅ Ensure button is enabled
+    store.parcels = [{
+      recipient: {
+        name: 'John Doe',
+        address: {
+          street: 'Main St',
+          houseNumber: '123',
+          postalCode: '12345',
+          city: 'Sample City'
+        }
+      },
+      weight: 1.5,
+      value: 100
+    }] // ✅ Ensure button is enabled
 
     await wrapper.vm.$nextTick() // ✅ Wait for reactive updates
 

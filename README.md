@@ -33,6 +33,37 @@ Automated parcel sorting system for internal handling at a parcel distribution c
 
 ---
 
+## Performance Considerations:
+
+- Chain of Responsibility pattern avoids deep nesting or redundant checks.
+
+- XML parsing runs only once on upload or reprocess.
+
+- Pinia state management ensures reactive updates without prop drilling.
+
+- Filters and searches are computed properties (efficient, cached by Vue reactivity).
+
+- Dark mode toggle is simple class change (no re-rendering).
+
+- Paginator limits DOM rendering of rows.
+
+---
+
+## Test Coverage Summary:
+
+# Unit tests for:
+
+- Parcel processing logic (chain of departments)
+
+- XML parsing
+
+- UI interactions (button clicks, event emissions)
+
+- Reset, Reprocess, Delete actions
+
+- DataTable filtering & loading states
+
+
 ## 🛠️ Tech Stack
 
 - Vue 3

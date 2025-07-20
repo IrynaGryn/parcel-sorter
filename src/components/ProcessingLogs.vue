@@ -6,7 +6,7 @@
   
       <div v-else class="logs-container">
         <div
-          v-for="(log, index) in logs"
+          v-for="(log, index) in logs.slice().reverse()"
           :key="index"
           :class="['log-entry', getLogClass(log)]"
         >
@@ -21,18 +21,14 @@
   defineProps<{ logs: string[] }>()
   
   const getLogClass = (log: string) => {
-    if (log.includes('[Insurance]')) return 'log-insurance'
-    if (log.includes('[Mail]')) return 'log-mail'
-    if (log.includes('[Regular]')) return 'log-regular'
-    if (log.includes('[Heavy]')) return 'log-heavy'
-    return 'log-unhandled'
+    if (log.includes('[Processing]')) return 'log-processing'
+    if (log.includes('[Reprocess]')) return 'log-reprocess'
+    return 'log-deleted'
   }
   
   const getLogIcon = (log: string) => {
-    if (log.includes('[Insurance]')) return 'pi pi-shield'
-    if (log.includes('[Mail]')) return 'pi pi-envelope'
-    if (log.includes('[Regular]')) return 'pi pi-box'
-    if (log.includes('[Heavy]')) return 'pi pi-truck'
+    if (log.includes('[Reprocess]')) return 'pi pi-shield'
+    if (log.includes('[Processing]')) return 'pi pi-truck'
     return 'pi pi-exclamation-triangle'
   }
   </script>
@@ -60,16 +56,12 @@
     align-items: center;
   }
   
-  .log-insurance { background-color: #e0f7fa; color: #006064; }
-  .log-mail { background-color: #e8f5e9; color: #2e7d32; }
-  .log-regular { background-color: #e3f2fd; color: #1565c0; }
-  .log-heavy { background-color: #fce4ec; color: #880e4f; }
-  .log-unhandled { background-color: #fbe9e7; color: #bf360c; }
+  .log-processing { background-color: #e0f7fa; color: #006064; }
+  .log-reprocess { background-color: #e8f5e9; color: #2e7d32; }
+  .log-deleted { background-color: #fbe9e7; color: #bf360c; }
 
-   body.dark-mode .log-insurance { background-color: #555; color: white }
-   body.dark-mode .log-mail { background-color: #555; color: white }
-   body.dark-mode .log-regular { background-color: #555; color: white }
-   body.dark-mode .log-heavy { background-color: #555; color: white }
-   body.dark-mode .log-unhandled { background-color: #555; color: white }
+   body.dark-mode .log-processing { background-color: #555; color: white }
+   body.dark-mode .llog-reprocess { background-color: #555; color: white }
+   body.dark-mode .log-deleted { background-color: #555; color: white }
   </style>
   

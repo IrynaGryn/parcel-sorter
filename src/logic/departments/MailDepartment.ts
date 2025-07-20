@@ -5,7 +5,6 @@ export class MailDepartment extends Department {
   // Processes parcels weighing up to 1kg.
   handle(parcel: Parcel, logs: string[]): void {
     if (parcel.weight <= 1) {
-      logs.push(`[${this.name}] Handling parcel to ${parcel.recipient.name}`)
       parcel.department = parcel.requiresInsurance ? `Insurance & ${this.name}` : this.name
     } else {
       super.handle(parcel, logs)
